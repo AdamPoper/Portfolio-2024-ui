@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    position: fixed;
+
+    ul {
+        list-style: none;
+        float: right;
+        margin: 20px;
+
+        li {
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 24px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 100;
+            }
+            padding: 10px;
+        }
+    }
+}
