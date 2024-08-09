@@ -1,0 +1,9 @@
+<ng-container>
+    <div class="container">
+        <form (submit)="onLogin()">
+            <input placeholder="Username" name="username" type="text" [(ngModel)]="username" />
+            <input placeholder="Password" name="password" type="text" [(ngModel)]="password" />
+            <button (click)="onLogin()">Login</button>
+        </form>
+    </div>
+</ng-container>
