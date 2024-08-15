@@ -2,6 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { LoginStoreService } from './login.store.service';
 import { SubscriptionLike } from 'rxjs';
 import { Router } from '@angular/router';
+import { routeDefinitions } from 'src/app/routing-definitions';
 
 @Component({
 	selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnDestroy {
 				.subscribe({
 					next: (user) => {
 						if (user) {
-							this.router.navigateByUrl('/admin');
+							this.router.navigate([routeDefinitions.ADMIN]);
 						}
 					},
 					error: (e) => alert(e.error)

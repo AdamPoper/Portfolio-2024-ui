@@ -1,9 +1,9 @@
-import { Inject, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Store, StoreConfig } from "@datorama/akita";
 import { User } from "src/app/models/user";
 
 export interface UserState {
-    currentUser: User | null;
+    currentUser: User;
 }
 
 function createInitialState() {

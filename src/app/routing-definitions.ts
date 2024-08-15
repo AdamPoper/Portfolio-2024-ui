@@ -2,5 +2,7 @@ export const routeDefinitions = {
     HOME: 'home',
     PHOTOS: 'photos',
     PROJECTS: 'projects',
-    ABOUT_ME: 'about-me'
+    ABOUT_ME: 'about-me',
+    LOGIN: 'login',
+    ADMIN: 'admin'
 }
