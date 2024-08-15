@@ -1,0 +1,93 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-weight: 300;
+        margin: 25px;
+    }
+
+    .options {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+
+            li {
+                margin: 10px;
+                text-decoration: none;
+                
+                &:hover {
+                    text-decoration: underline;
+                    color: blue;
+                }
+            }
+
+            .selected {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .admin-panels {
+        margin: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        table {
+            width: 100%;
+
+            td {
+                padding: 10px;
+                text-align: center;
+            }
+
+            tbody {
+                tr {
+                    
+                }
+            }
+        }
+
+        .photo-panel {
+            width: 50vw;
+            .preview {
+                max-width: 5vw;
+                max-height: 5vh;
+            }
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 6vw;
+            margin-right: 6vw;
+
+            button[type=submit] {
+                margin-right: 5px;
+                border: none;
+                border-radius: 5px;
+                padding: 5px;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+            }
+
+            a {
+                margin: 5px;
+                
+                &:hover {
+                    color: blue;
+                }
+            }
+        }
+    }
+}
