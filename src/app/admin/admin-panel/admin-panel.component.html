@@ -23,16 +23,12 @@
                     <button (click)="onSubmitPhoto()" type="submit">Submit</button>
                     <input type="file" (change)="addNewPhoto($event)"/>
                 </form>
-                <a (click)="toggleEditing()">
-                    Edit
-                </a>
             </div>
             <table>
                 <thead>
                     <th>Preview</th>
                     <th>Name</th>
                     <th>Date Added</th>
-                    <th *ngIf="isEditing()">Actions</th>
                 </thead>
                 <tbody>
                     <tr *ngFor="let photo of photos; let i = index">
@@ -45,17 +41,12 @@
                         <td>
                             <span>{{ photoDate }}</span>
                         </td>
-                        <td *ngIf="isEditing()">
-                            <span>
-                                Delete
-                            </span>
-                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
         <div class="project-panel" *ngSwitchCase="1">
-            
+            <app-project-panel></app-project-panel>
         </div>
     </div>
 </div>

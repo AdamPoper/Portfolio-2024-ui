@@ -15,8 +15,7 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
 	
 	private newPhotoFile: any;
 	private newPhotoBuffer: string;
-	private editing = new BehaviorSubject<boolean>(false);
-	private panel = new BehaviorSubject<number>(0);
+	private panel = new BehaviorSubject<number>(1);
 	private sub = new SubSink();
 
 	constructor(private photoService: PhotoService) {}
@@ -41,7 +40,6 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
 
 	addNewPhoto(event: any): void {
 		this.newPhotoFile = event.target.files[0];
-		console.log(this.newPhotoFile);
 		const reader = new FileReader();
 		reader.onload = () => this.newPhotoBuffer = reader.result?.toString();
 		reader.readAsDataURL(this.newPhotoFile);
@@ -68,14 +66,6 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
 					}
 				});
 		}
-	}
-
-	toggleEditing(): void {
-		this.editing.next(!this.editing.value);
-	}
-
-	isEditing(): boolean {
-		return this.editing.value;
 	}
 
 	get photoDate(): string {
