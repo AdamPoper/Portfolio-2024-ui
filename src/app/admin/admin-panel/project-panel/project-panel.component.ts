@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SubSink } from 'src/app/sub-sink';
 import { ProjectService } from 'src/app/service/project.service';
@@ -14,8 +14,9 @@ interface MediaFile {
 	templateUrl: './project-panel.component.html',
 	styleUrls: ['./project-panel.component.scss']
 })
-export class ProjectPanelComponent implements OnInit {
+export class ProjectPanelComponent implements OnInit, OnDestroy {
 	form: FormGroup;
+	@ViewChild('mediaInput') mediaInput: ElementRef;
 
 	private mediaFiles: MediaFile[];
 	private sub = new SubSink();
@@ -43,7 +44,11 @@ export class ProjectPanelComponent implements OnInit {
 				url: data.url,
 				media: this.mediaFiles
 			};
-			this.sub.sink = this.projectService.createNewProject(payload).subscribe();
+			this.sub.sink = this.projectService.createNewProject(payload).subscribe({
+				next: (msg) => alert(msg),
+				error: (msg) => alert(msg),
+				complete: () => this.reset()
+			});
 		}
 	}
 
@@ -60,5 +65,15 @@ export class ProjectPanelComponent implements OnInit {
 			} as MediaFile);
 			reader.readAsDataURL(f);
 		}
+	}
+
+	reset(): void {
+		this.form.reset();
+		this.mediaFiles = new Array<MediaFile>();
+		this.mediaInput.nativeElement.value = '';
+	}
+
+	ngOnDestroy(): void {
+		this.sub.unsubscribe();
 	}
 }

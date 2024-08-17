@@ -18,32 +18,7 @@
     </div>
     <div class="admin-panels" [ngSwitch]="getPanel()">
         <div class="photo-panel" *ngSwitchCase="0">
-            <div class="controls">
-                <form>
-                    <button (click)="onSubmitPhoto()" type="submit">Submit</button>
-                    <input type="file" (change)="addNewPhoto($event)"/>
-                </form>
-            </div>
-            <table>
-                <thead>
-                    <th>Preview</th>
-                    <th>Name</th>
-                    <th>Date Added</th>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let photo of photos; let i = index">
-                        <td>
-                            <img class="preview" [src]="photo.buffer" [alt]="photo.name">
-                        </td>
-                        <td>
-                            <span>{{ photo.name }}</span>
-                        </td>
-                        <td>
-                            <span>{{ photoDate }}</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <app-photo-panel></app-photo-panel>
         </div>
         <div class="project-panel" *ngSwitchCase="1">
             <app-project-panel></app-project-panel>

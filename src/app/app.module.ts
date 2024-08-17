@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ProjectPanelComponent } from './admin/admin-panel/project-panel/project-panel.component';
+import { PhotoPanelComponent } from './admin/admin-panel/photo-panel/photo-panel.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { ProjectPanelComponent } from './admin/admin-panel/project-panel/project
         LoginComponent,
 		LoginComponent,
   		AdminPanelComponent,
-  		ProjectPanelComponent
+  		ProjectPanelComponent,
+		PhotoPanelComponent
     ],
     imports: [
 		BrowserModule,
