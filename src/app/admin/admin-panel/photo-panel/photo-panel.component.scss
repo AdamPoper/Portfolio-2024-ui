@@ -1,0 +1,42 @@
+.container {
+    width: 50vw;
+    .preview {
+        max-width: 5vw;
+        max-height: 5vh;
+    }
+
+    table {
+        width: 100%;
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+    }
+
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 6vw;
+        margin-right: 6vw;
+
+        button[type=submit] {
+            margin-right: 5px;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        a {
+            margin: 5px;
+            
+            &:hover {
+                color: blue;
+            }
+        }
+    }   
+}

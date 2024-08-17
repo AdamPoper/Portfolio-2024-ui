@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="controls">
+        <form>
+            <button (click)="onSubmitPhoto()" type="submit">Submit</button>
+            <input type="file" (change)="addNewPhoto($event)"/>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <th>Preview</th>
+            <th>Name</th>
+            <th>Date Added</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let photo of photos; let i = index">
+                <td>
+                    <img class="preview" [src]="photo.buffer" [alt]="photo.name">
+                </td>
+                <td>
+                    <span>{{ photo.name }}</span>
+                </td>
+                <td>
+                    <span>{{ photoDate }}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
