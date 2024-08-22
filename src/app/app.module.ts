@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { ProjectPanelComponent } from './admin/admin-panel/project-panel/project-panel.component';
 import { PhotoPanelComponent } from './admin/admin-panel/photo-panel/photo-panel.component';
+import { ProjectsComponent } from './components/pages/projects/projects.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { PhotoPanelComponent } from './admin/admin-panel/photo-panel/photo-panel
 		LoginComponent,
   		AdminPanelComponent,
   		ProjectPanelComponent,
-		PhotoPanelComponent
+		PhotoPanelComponent,
+  		ProjectsComponent
     ],
     imports: [
 		BrowserModule,
