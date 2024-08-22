@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="background">
+        <h1>
+            Projects
+        </h1>
+        <p></p>
+    </div>
+    
+    <div class="projects-container">
+       <div class="project" *ngFor="let p of (projects$ | async)">
+            <h1>{{ p.title }}</h1>
+            <p>{{ p.description }}</p>
+            <div class="technologies">
+                <span *ngFor="let t of getTechnologies(p.technologies)">
+                    {{ t }}
+                </span>
+            </div>
+            <div class="links">
+                <a *ngIf="p.github" [href]="p.github" target="_blank">View on GitHub</a>
+                <a *ngIf="p.url" [href]="p.url">{{ p.url }}</a>
+            </div>
+            <div *ngIf="!(loadingMedia$ | async)" class="project-media">
+                <img *ngFor="let pm of getProjectMedia(p.id)" [src]="pm.buffer" />
+            </div>
+            <div class="divider"></div>
+       </div> 
+    </div>
+</div>

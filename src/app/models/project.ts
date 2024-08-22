@@ -4,5 +4,9 @@ export class Project {
     public github: string;
     public url: string;
     public technologies: string;
-    public media: any[];
+    public id: string;
+
+    constructor(args: any) {
+        Object.assign(this, args);
+    }
 }
