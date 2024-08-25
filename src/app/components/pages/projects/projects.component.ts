@@ -44,6 +44,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.sub.sink.unsubscribe();
+        this.sub.unsubscribe();
     }
 }
