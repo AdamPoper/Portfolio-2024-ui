@@ -7,6 +7,7 @@ import { AuthGuard } from './auth.guard';
 import { routeDefinitions } from './routing-definitions';
 import { ProjectsComponent } from './components/pages/projects/projects.component';
 import { PhotosComponent } from './components/pages/photos/photos.component';
+import { AboutMeComponent } from './components/pages/about-me/about-me.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -14,7 +15,8 @@ const routes: Routes = [
 	{ path: routeDefinitions.LOGIN, component: LoginComponent, canActivate: [AuthGuard] },
 	{ path: routeDefinitions.ADMIN, component: AdminPanelComponent, canActivate: [AuthGuard] },
 	{ path: routeDefinitions.PROJECTS, component: ProjectsComponent, canActivate: [AuthGuard] },
-	{ path: routeDefinitions.PHOTOS, component: PhotosComponent, canActivate: [AuthGuard] }
+	{ path: routeDefinitions.PHOTOS, component: PhotosComponent, canActivate: [AuthGuard] },
+	{ path: routeDefinitions.ABOUT_ME, component: AboutMeComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

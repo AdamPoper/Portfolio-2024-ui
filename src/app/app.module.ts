@@ -13,6 +13,7 @@ import { ProjectPanelComponent } from './admin/admin-panel/project-panel/project
 import { PhotoPanelComponent } from './admin/admin-panel/photo-panel/photo-panel.component';
 import { ProjectsComponent } from './components/pages/projects/projects.component';
 import { PhotosComponent } from './components/pages/photos/photos.component';
+import { AboutMeComponent } from './components/pages/about-me/about-me.component';
 
 @NgModule({
     declarations: [
@@ -25,7 +26,8 @@ import { PhotosComponent } from './components/pages/photos/photos.component';
   		ProjectPanelComponent,
 		PhotoPanelComponent,
   		ProjectsComponent,
-		PhotosComponent
+		PhotosComponent,
+  AboutMeComponent
     ],
     imports: [
 		BrowserModule,
