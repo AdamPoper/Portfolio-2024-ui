@@ -35,8 +35,21 @@ export class ProjectsComponent implements OnInit, OnDestroy {
         return technologies.split(';');
     }
     
-    getProjectMedia(projectId: string): ProjectMedia[] {
-        return this.projectQuery.getAllProjectMedia().get(projectId);
+    getProjectMediaImages(projectId: string): ProjectMedia[] {
+        return this.getProjectMedia(projectId, 'jpg,png');
+    }
+
+    getProjectMediaVideos(projectId: string): ProjectMedia[] {
+        return this.getProjectMedia(projectId, 'mp4,mov');
+    }
+
+    private getProjectMedia(projectId: string, fileTypes: string): ProjectMedia[] {
+        const allMedia = this.projectQuery.getAllProjectMedia().get(projectId);
+        const types = fileTypes.split(',');
+        return allMedia.filter((pm: ProjectMedia) => {
+            const type = pm.name.split('.')[1].toLowerCase();
+            return types.includes(type);
+        });
     }
     
     get projects$(): Observable<Project[]> {

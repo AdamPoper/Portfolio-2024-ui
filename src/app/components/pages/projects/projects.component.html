@@ -20,7 +20,10 @@
                 <a *ngIf="p.url" [href]="p.url">{{ p.url }}</a>
             </div>
             <div *ngIf="!(loadingMedia$ | async)" class="project-media">
-                <img *ngFor="let pm of getProjectMedia(p.id)" [src]="pm.buffer" />
+                <img *ngFor="let pm of getProjectMediaImages(p.id)" [src]="pm.buffer" />
+                <video *ngFor="let pm of getProjectMediaVideos(p.id)" autoplay loop muted>
+                    <source [src]="pm.buffer">s
+                </video>
             </div>
             <div class="divider"></div>
        </div> 
