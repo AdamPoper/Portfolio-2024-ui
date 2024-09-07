@@ -11,7 +11,8 @@
         width: 100%;
         margin-bottom: 20px;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         
         .project {
             display: flex;
@@ -61,6 +62,9 @@
                     max-width: 25vw;
                     margin: 20px;
                     transition: transform 0.3s ease;
+                    object-fit:contain;
+                    height: auto;
+                    width: auto;
 
                     &:hover {
                         transform: scale(2.0);
