@@ -3,3 +3,14 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+.btn-primary {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
