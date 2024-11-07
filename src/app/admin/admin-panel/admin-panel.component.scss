@@ -1,48 +1,75 @@
 .container {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    position: relative;
 
-    h1 {
-        font-weight: 300;
-        margin: 25px;
-    }
-
-    .options {
-        width: 100%;
+    .admin-settings {
+        margin-left: auto;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
 
-        ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-
-            li {
-                margin: 10px;
-                text-decoration: none;
-                
-                &:hover {
-                    text-decoration: underline;
-                    color: blue;
-                }
+        .preference {
+            label, input {
+                margin: 1rem;
             }
-
-            .selected {
-                text-decoration: underline;
-            }
+        }
+        
+        h3 {
+            font-weight: 300;
         }
     }
 
-    .admin-panels {
-        margin: 20px;
-        width: 100%;
+    .main-content {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
 
-        .photo-panel, .project-panel {
-            width: 50vw;
+        h1 {
+            font-weight: 300;
+            margin: 25px;
+        }
+    
+        .options {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+    
+            ul {
+                display: flex;
+                justify-content: center;
+                list-style: none;
+    
+                li {
+                    margin: 10px;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                        color: blue;
+                    }
+                }
+    
+                .selected {
+                    text-decoration: underline;
+                }
+            }
+        }
+    
+        .admin-panels {
+            margin: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+    
+            .photo-panel, .project-panel {
+                width: 50vw;
+            }
         }
     }
 }
