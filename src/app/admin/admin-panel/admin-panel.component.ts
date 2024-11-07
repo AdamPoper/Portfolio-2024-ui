@@ -34,10 +34,6 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
 		return this.panel.getValue();
 	}
 
-	onChangeFileLocationPreference(event: any): void {
-		console.log(this.fileStoragePreference);
-	}
-
 	onSavePreferences(): void {
 		this.sub.sink = this.userService.updateFileStoragePreference(
 			this.userQuery.getCurrentUser().id,
